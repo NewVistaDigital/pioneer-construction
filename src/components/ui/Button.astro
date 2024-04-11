@@ -1,14 +1,14 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 // required: npx add astro-icon
 
 interface Props {
   text: string;
   href: string;
-  style?: 'primary' | 'secondary';
+  style?: "primary" | "secondary";
   icon?: {
     name: string;
-    side: 'left' | 'right';
+    side: "left" | "right";
   };
   isFilled?: boolean;
   borderVisible?: boolean;
@@ -30,16 +30,15 @@ const {
 <a
   href={href}
   class:list={[
-    'btn',
+    "btn",
     classes,
-    style,
+    "btn-" + style,
     { filled: isFilled, bordered: borderVisible },
   ]}
-  {...rest}
->
-  {icon && icon.side === 'left' && <Icon name={icon.name} />}
+  {...rest}>
+  {icon && icon.side === "left" && <Icon name={icon.name} />}
 
   <slot>{text}</slot>
 
-  {icon && icon.side === 'right' && <Icon name={icon.name} />}
+  {icon && icon.side === "right" && <Icon name={icon.name} />}
 </a>
