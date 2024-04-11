@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/site/BaseHead.astro';
-import Header from '../components/site/Header.astro';
-import Footer from '../components/site/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/site/BaseHead.astro";
+import Header from "../components/site/Header.astro";
+import Footer from "../components/site/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
@@ -15,7 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">
+  <body class="bg-white dark:text-white">
     <a href="#main-content" class="sr-only focus:not-sr-only active:not-sr-only"
       >Skip to content</a
     >

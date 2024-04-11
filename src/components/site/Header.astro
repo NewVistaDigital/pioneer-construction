@@ -1,60 +1,45 @@
 ---
 // Components
-import NavLink from '@components/ui/NavLink.astro';
-import Image from 'astro/components/Image.astro';
+import NavLink from "@components/ui/NavLink.astro";
+import Image from "astro/components/Image.astro";
 // Assets
-import logo from '@assets/images/logo.png';
+import logo from "@assets/images/logo.png";
 
-import { SITE_TITLE } from '@src/consts';
-import DarkModeToggle from '@components/ui/DarkModeToggle.astro';
+import { SITE_PHONE_HREF, SITE_TITLE } from "@src/consts";
+import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
 import {
   Astronav,
   MenuItems,
   MenuIcon,
   Dropdown,
   DropdownItems,
-} from 'astro-navbar';
+} from "astro-navbar";
 ---
 
-<!-- <DarkModeToggle /> -->
-
+<DarkModeToggle />
 <header class="gap-5 p-5 lg:flex">
   <Astronav>
     <div class="flex w-full items-center justify-between">
       <a class="text-xl font-extrabold"
-        ><Image
-          src="/logo.png"
-          alt={SITE_TITLE}
-          width="150"
-          height="10"
-        /></a
+        ><Image src="/logo.png" alt={SITE_TITLE} width="150" height="10" /></a
       >
       <div class="block lg:hidden">
         <div class="flex justify-between">
-          <a
-            href="/"
-            aria-label="homepage"
-            class="inline-block h-auto align-middle"
-            data-navLink>
-            <span class="hidden h-8 w-auto pr-6 dark:inline-block"
-              ><Fragment set:html={logo} />
-            </span></a
-          >
-          <MenuIcon class="h-4 w-4 text-gray-800">
+          <MenuIcon class="h-4 w-4 text-zinc-800">
             <svg
               class="ham hamRotate ham8"
               viewBox="0 0 100 100"
               width="40"
               onclick="this.classList.toggle('active')">
               <path
-                class="line top stroke-stone-800 dark:stroke-white"
+                class="line top stroke-zinc-800 dark:stroke-white"
                 d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
               ></path>
               <path
-                class="line middle stroke-stone-800 dark:stroke-white"
+                class="line middle stroke-zinc-800 dark:stroke-white"
                 d="m 30,50 h 40"></path>
               <path
-                class="line bottom stroke-stone-800 dark:stroke-white"
+                class="line bottom stroke-zinc-800 dark:stroke-white"
                 d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
               ></path>
             </svg></MenuIcon
@@ -63,40 +48,40 @@ import {
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-5 items-center">
+      <ul class="flex flex-col items-center lg:flex-row lg:gap-5">
         <li><NavLink href="/" data-navLink>Home</NavLink></li>
-        <li><NavLink href="/blog" data-navLink>Blog</NavLink></li>
         <li><NavLink href="/about" data-navLink>About</NavLink></li>
-        <li>
-          <Dropdown class="group">
-            <button class="flex items-center">
-              <span> Dropdown </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                class="mt-0.5 h-3 w-3 group-open:rotate-180">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </button>
-            <DropdownItems class="relative">
-              <div class="absolute top-0">
-                <ul>
-                  <li>Menu 1</li>
-                  <li>Menu 2</li>
-                  <li>Menu 3</li>
-                </ul>
-              </div>
-            </DropdownItems>
-          </Dropdown>
-        </li>
-
+        <!-- <li> -->
+        <!--   <button class="flex items-center"> -->
+        <!--     <span> Dropdown </span> -->
+        <!--     <svg -->
+        <!--       xmlns="http://www.w3.org/2000/svg" -->
+        <!--       fill="none" -->
+        <!--       viewBox="0 0 24 24" -->
+        <!--       stroke-width="3" -->
+        <!--       stroke="currentColor" -->
+        <!--       class="mt-0.5 h-3 w-3 group-open:rotate-180"> -->
+        <!--       <path -->
+        <!--         stroke-linecap="round" -->
+        <!--         stroke-linejoin="round" -->
+        <!--         d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path> -->
+        <!--     </svg> -->
+        <!--   </button> -->
+        <!--   <DropdownItems class="relative"> -->
+        <!--     <div class="absolute top-0"> -->
+        <!--       <ul> -->
+        <!--         <li>Menu 1</li> -->
+        <!--         <li>Menu 2</li> -->
+        <!--         <li>Menu 3</li> -->
+        <!--       </ul> -->
+        <!--     </div> -->
+        <!--   </DropdownItems> -->
+        <!-- </Dropdown> -->
+        <!-- </li> -->
         <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
+        <li>
+          <a href={SITE_PHONE_HREF} class="btn-secondary w-max">Call Us Now</a>
+        </li>
       </ul>
     </MenuItems>
   </Astronav>
@@ -104,11 +89,11 @@ import {
 
 <script>
   // Accessibility tool: add aria-current to current page nav links.
-  const navLinks = document.querySelectorAll('[data-navLink]');
+  const navLinks = document.querySelectorAll("[data-navLink]");
 
   navLinks.forEach((link) => {
-    if (link.getAttribute('href') === window.location.pathname) {
-      link.setAttribute('aria-current', 'page');
+    if (link.getAttribute("href") === window.location.pathname) {
+      link.setAttribute("aria-current", "page");
     }
   });
 </script>

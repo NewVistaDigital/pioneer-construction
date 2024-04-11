@@ -1,12 +1,17 @@
 ---
 // Components
 import Button from "@components/ui/Button.astro";
+import Image from "astro/components/Image.astro";
+
+// Content
+import Workers from "@assets/images/workers-on-roof.jpg";
 ---
 
-<div class="prose-lg bg-slate-100 py-24 dark:bg-slate-800">
-  <div class="container mx-auto flex px-4">
-    <div class="w-1/2">
-      <h1>Your Stress Free Roofing experts in Colorado Springs</h1>
+<div class="prose-lg bg-slate-100 py-12 dark:bg-zinc-800 md:py-24">
+  <div
+    class="space-between container mx-auto flex gap-16 px-4 max-md:flex-col max-md:text-center">
+    <div class="md:w-1/2">
+      <h1>Your Stress-Free Roofing experts in Colorado Springs</h1>
       <p>
         We can help you with any roofing problem you are facing. We take care of
         everything from inspection to insurance. Make your roof last longer by
@@ -19,6 +24,14 @@ import Button from "@components/ui/Button.astro";
         isFilled="true"
       />
     </div>
-    <div class="w-1/2">image here</div>
+    <div class="md:w-1/2">
+      <Image
+        src={Workers}
+        alt="workers on roof"
+        format="webp"
+        class="shadow-tl rounded-lg"
+        width="650"
+      />
+    </div>
   </div>
 </div>
