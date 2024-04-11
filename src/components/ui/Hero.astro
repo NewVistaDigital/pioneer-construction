@@ -1,23 +1,23 @@
 ---
 interface Props {
-  contentLocation: 'left' | 'right' | 'center';
+  contentLocation: "left" | "right" | "center";
   classes?: string;
   topper?: string;
   heading?: string;
-  textColor?: 'dark' | 'light';
+  textColor?: "dark" | "light";
   image?: {
     src: string;
     alt: string;
-    location: 'side' | 'background';
+    location: "side" | "background";
   };
 }
 
 const {
   classes,
-  contentLocation = 'left',
+  contentLocation = "left",
   heading,
   image,
-  textColor = 'dark',
+  textColor = "dark",
   topper,
   ...attr
 } = Astro.props as Props;
@@ -26,14 +26,14 @@ const {
 <section
   id="hero"
   class:list={[
-    'hero',
+    "hero",
     classes,
-    textColor ? 'text-' + textColor : '',
-    'content-' + contentLocation,
-    image ? `image-${image.location}` : '',
+    textColor ? "text-" + textColor : "",
+    "content-" + contentLocation,
+    // contentLocation == "left" || "right" ? "max-w-xl" : "",
+    image ? `image-${image.location}` : "",
   ]}
-  {...attr}
->
+  {...attr}>
   <div class="content">
     {topper && <span class="topper">{topper}</span>}
     {heading && <h1 class="title">{heading}</h1>}
@@ -41,7 +41,7 @@ const {
   </div>
   <!--To make your own background crops of people use https://www.remove.bg/-->
   {
-    image && image.location != 'background' && (
+    image && image.location != "background" && (
       <picture class="picture">
         <source media="(max-width: 600px)" srcset={image.src} />
         <source media="(min-width: 601px)" srcset={image.src} />
