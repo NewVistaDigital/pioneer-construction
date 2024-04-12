@@ -1,10 +1,15 @@
 ---
+// Layout
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+// Components
+import Button from "@components/ui/Button.astro";
 
 // Content
 import Hero from "@components/content/HeroHome.astro";
 import HomeAbout from "@components/content/HomeAbout.astro";
 import CTA from "@components/content/CallToAction.astro";
+import { SITE_PHONE, SITE_PHONE_HREF } from "@src/consts";
 ---
 
 <BaseLayout
@@ -12,4 +17,25 @@ import CTA from "@components/content/CallToAction.astro";
   description="Colorado Springs Best Roofing Company. In the industry for 20 years.">
   <Hero />
   <HomeAbout />
+  <CTA
+    title="Wind, Hail, Storms, and more. We can help."
+    style="secondary"
+    classes="-mb-16"
+    ><p>
+      Communication is key. Our customers love the clear detailed communication
+      we bring with our free roof inspections. We'll handle insurance
+      negotiations and keep you in the loop throughout the entire process.
+    </p>
+    <Button text="Book your inspection" href="/contact" style="secondary" />
+    <div>
+      <p class="mb-0">or give us a call at</p>
+      <p class="mb-0 mt-2">
+        <a
+          href={SITE_PHONE_HREF}
+          class="text-3xl transition-colors hover:text-yellow-200"
+          >{SITE_PHONE}</a
+        >
+      </p>
+    </div>
+  </CTA>
 </BaseLayout>
