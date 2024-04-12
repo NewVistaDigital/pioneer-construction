@@ -3,7 +3,8 @@
 import NavLink from "@components/ui/NavLink.astro";
 import Image from "astro/components/Image.astro";
 // Assets
-import logo from "@assets/images/logo.png";
+import logo from "@assets/logo.png";
+import logoDark from "@assets/logo-white.png";
 
 import { SITE_PHONE_HREF, SITE_TITLE } from "@src/consts";
 import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
@@ -20,9 +21,22 @@ import {
 <header class="gap-5 p-5 lg:flex">
   <Astronav>
     <div class="flex w-full items-center justify-between">
-      <a class="text-xl font-extrabold"
-        ><Image src="/logo.png" alt={SITE_TITLE} width="150" height="10" /></a
-      >
+      <a class="text-xl font-extrabold" href="/">
+        <Image
+          src={logo}
+          alt={SITE_TITLE}
+          width="150"
+          height="10"
+          class="dark:hidden"
+        />
+        <Image
+          src={logoDark}
+          alt={SITE_TITLE}
+          width="150"
+          height="10"
+          class="hidden dark:inline-block"
+        />
+      </a>
       <div class="block lg:hidden">
         <div class="flex justify-between">
           <MenuIcon class="h-4 w-4 text-zinc-800">
