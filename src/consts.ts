@@ -12,7 +12,7 @@ export const SITE_URL = 'https://example.com/';
 export const SITE_EMAIL = 'webmaster@newvistadigital.com';
 export const SITE_PHONE = '(719) 822-9222'
 export const SITE_PHONE_HREF = 'tel:7198229222'
-export const SITE_DEFAULT_IMAGE = '/blog-placeholder-1.jpg';
+export const SITE_DEFAULT_IMAGE = '/preview.jpg'
 export const SITE_UTM_SOURCE = slugify(SITE_TITLE);
 
 export const UI_THEME = 'system'; // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
