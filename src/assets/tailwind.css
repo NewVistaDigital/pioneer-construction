@@ -40,7 +40,6 @@
     @apply btn bg-primary text-white hover:bg-teal-700;
   }
 
-
   .shadow-tl {
     box-shadow: -14px -14px 0 0 var(--c-primary);
   }

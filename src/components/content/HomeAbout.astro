@@ -1,0 +1,39 @@
+---
+// Components
+import Button from "@components/ui/Button.astro";
+import Image from "astro/components/Image.astro";
+
+// Content
+import Forklift from "@assets/images/house-with-forklift.jpg";
+import LargeHouse from "@assets/images/large-roof.jpg";
+---
+
+<section class="container prose-xl mx-auto flex gap-24 py-24 max-lg:flex-col">
+  <div class="not-prose relative flex flex-col lg:w-1/2">
+    <div class="pr-12">
+      <Image
+        src={LargeHouse}
+        alt="Colorado springs roof materials"
+        width="400"
+        class="w-full rounded-lg"
+      />
+    </div>
+    <Image
+      src={Forklift}
+      alt="Colorado springs roof materials"
+      width="400"
+      class="shadow-tl relative -mt-32 self-end rounded-lg lg:w-1/2"
+    />
+  </div>
+  <div class="lg:w-1/2">
+    <p class="font-space text-primary">About Us</p>
+    <h2 class="mt-0 font-bold">Quick response. Honest answers.</h2>
+    <p class="font-space">
+      You can trust us to tell you the truth. We aren't looking for problems
+      that aren't there. If your roof doesn't need repaired or replaced, we'll
+      let you know. If it does, we will guide you though the next steps and take
+      care of working with insurance for you.
+    </p>
+    <Button text="Who we are" href="/about" style="primary" />
+  </div>
+</section>

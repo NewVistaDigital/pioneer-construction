@@ -9,8 +9,8 @@
 
 .theme-toggle {
   --size: 1.4rem;
-  --icon-fill: hsl(210 10% 30%);
-  --icon-fill-hover: hsl(210 10% 15%);
+  --icon-fill: hsl(210 100% 100%);
+  --icon-fill-hover: hsl(210 100% 90%);
   background: none;
   border: none;
   padding: 0;

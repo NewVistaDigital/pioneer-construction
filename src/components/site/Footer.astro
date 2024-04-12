@@ -2,6 +2,7 @@
 // Components
 import Button from "@components/ui/Button.astro";
 import Image from "astro/components/Image.astro";
+import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
 
 // Content
 import logoDark from "@assets/logo-white.png";
@@ -20,6 +21,7 @@ const today = new Date();
       <Image src={logoDark} alt={SITE_TITLE} width="250" height="10" />
       <p>Mission here</p>
       <p>Hours here</p>
+      <DarkModeToggle />
     </div>
     <div class="text-center">
       <a
@@ -31,6 +33,7 @@ const today = new Date();
       <Button href="/contact" style="primary" text="Book an inspection" />
     </div>
   </div>
+
   <div class="mt-24 px-4 text-right">
     <p class="mb-0">
       &copy; {today.getFullYear()}
