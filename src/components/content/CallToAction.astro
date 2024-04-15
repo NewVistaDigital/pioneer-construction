@@ -16,6 +16,7 @@ const { title, style, classes, ...rest } = Astro.props as Props;
       "bg-" + style,
       classes,
       style === "primary" && "text-white",
+      style === "secondary" && "dark:text-black",
     ]}
     {...rest}>
     <h2 class="text-4xl font-bold">

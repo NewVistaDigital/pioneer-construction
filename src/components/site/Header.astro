@@ -6,7 +6,7 @@ import Image from "astro/components/Image.astro";
 import logo from "@assets/logo.png";
 import logoDark from "@assets/logo-white.png";
 
-import { SITE_PHONE_HREF, SITE_TITLE } from "@src/consts";
+import { SITE_PHONE, SITE_PHONE_HREF, SITE_TITLE } from "@src/consts";
 import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
 import {
   Astronav,
@@ -17,15 +17,22 @@ import {
 } from "astro-navbar";
 ---
 
-<header class="gap-5 p-5 lg:flex">
+<header class="container mx-auto gap-5 p-5 lg:flex">
   <Astronav>
     <div class="flex w-full items-center justify-between">
       <a class="text-xl font-extrabold" href="/">
-        <Image src={logo} alt={SITE_TITLE} width="150" class="dark:hidden" />
+        <Image
+          src={logo}
+          alt={SITE_TITLE}
+          width="150"
+          loading="eager"
+          class="dark:hidden"
+        />
         <Image
           src={logoDark}
           alt={SITE_TITLE}
           width="150"
+          loading="eager"
           class="hidden dark:inline-block"
         />
       </a>
@@ -53,7 +60,7 @@ import {
         </div>
       </div>
     </div>
-    <MenuItems class="hidden lg:flex">
+    <MenuItems class="hidden w-full justify-end lg:flex">
       <ul class="flex flex-col items-center lg:flex-row lg:gap-5">
         <li><NavLink href="/" data-navLink>Home</NavLink></li>
         <li><NavLink href="/about" data-navLink>About</NavLink></li>
@@ -84,9 +91,16 @@ import {
         <!--   </DropdownItems> -->
         <!-- </Dropdown> -->
         <!-- </li> -->
-        <li><NavLink href="/contact" data-navLink>Contact</NavLink></li>
+        <li><NavLink href="/services" data-navLink>Services</NavLink></li>
         <li>
-          <a href={SITE_PHONE_HREF} class="btn-secondary w-max">Call Us Now</a>
+          <NavLink href="/contact" data-navLink>Contact Us</NavLink>
+        </li>
+        <li>
+          <a
+            href={SITE_PHONE_HREF}
+            class="inline-block w-max text-xl font-bold text-primary"
+            >{SITE_PHONE}</a
+          >
         </li>
       </ul>
     </MenuItems>

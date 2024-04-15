@@ -8,6 +8,7 @@ import Button from "@components/ui/Button.astro";
 // Content
 import Hero from "@components/content/HeroHome.astro";
 import HomeAbout from "@components/content/HomeAbout.astro";
+import HomeServices from "@components/content/HomeServices.astro";
 import CTA from "@components/content/CallToAction.astro";
 import { SITE_PHONE, SITE_PHONE_HREF } from "@src/consts";
 ---
@@ -17,6 +18,7 @@ import { SITE_PHONE, SITE_PHONE_HREF } from "@src/consts";
   description="Colorado Springs Best Roofing Company. In the industry for 20 years.">
   <Hero />
   <HomeAbout />
+  <HomeServices />
   <CTA
     title="Wind, Hail, Storms, and more. We can help."
     style="secondary"
@@ -27,7 +29,7 @@ import { SITE_PHONE, SITE_PHONE_HREF } from "@src/consts";
       bring with our free roof inspections. We'll handle insurance negotiations and
       keep you in the loop throughout the entire process.
     </p>
-    <Button text="Book your inspection" href="/contact" style="secondary" />
+    <Button text="Book your inspection" href="/contact" />
     <div>
       <p class="mb-0">or give us a call at</p>
       <p class="mb-0 mt-2">
