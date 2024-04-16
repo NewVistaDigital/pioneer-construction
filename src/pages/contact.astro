@@ -1,11 +1,88 @@
 ---
 // Layout
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+import Step from "@components/ui/Steps.astro";
 // Content
-import Form from '../components/ui/ContactForm.astro'
+import Form from "../components/ui/ContactForm.astro";
+import { SITE_EMAIL, SITE_PHONE_HREF, SITE_PHONE } from "@src/consts";
+import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout>
-  <Form />
+  <section class="bg-white dark:bg-zinc-900">
+    <div class="mx-auto max-w-screen-lg px-4 py-8 lg:py-16">
+      <h1 class="mb-6">Contact us</h1>
+      <div class="flex w-full flex-col gap-12 lg:flex-row">
+        <div
+          class="flex w-full flex-col gap-6 md:flex-row lg:w-1/2 lg:flex-col">
+          <div class="md:w-1/2 lg:w-full">
+            <p class="font-light text-zinc-500 dark:text-zinc-400 sm:text-xl">
+              Got a question about your roof? Want to send feedback about how we
+              did? Let us know and we'll be in touch asap.
+            </p>
+          </div>
+          <div>
+            <ul class="leading-10">
+              <li>
+                <Icon
+                  name="solar:letter-bold"
+                  is:inline
+                  size="24"
+                  class="mr-3.5 inline rounded-full bg-primary p-1 text-white"
+                /><a
+                  href=`mailto:${SITE_EMAIL}`
+                  class="text-teal-600 transition-colors hover:text-black hover:dark:text-white"
+                  >{SITE_EMAIL}</a
+                >
+              </li>
+              <li>
+                <Icon
+                  name="solar:phone-calling-bold"
+                  is:inline
+                  size="24"
+                  class="mr-2.5 inline rounded-full bg-primary p-1 text-white"
+                />
+                <a
+                  href={SITE_PHONE_HREF}
+                  class="text-teal-600 transition-colors hover:text-black hover:dark:text-white"
+                  >{SITE_PHONE}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <Form />
+      </div>
+    </div>
+  </section>
+
+  <section id="steps" class="container mx-auto my-12 text-center">
+    <p class="font-space text-primary">Stress free. Zero hassle</p>
+    <h2 class="mb-12 text-4xl">New roof in 3 easy steps</h2>
+    <div class="space-between container mx-auto flex flex-col lg:flex-row">
+      <Step
+        step={1}
+        title="Inspections"
+        text="Call us to schedule your free inspection"
+      />
+      <Step
+        step={2}
+        title="Negotiations"
+        text="If your roof needs work, we'll work with your insurance on your behalf to take care of everything."
+      />
+      <Step
+        step={3}
+        title="New Roof"
+        text="We'll get you scheduled ASAP and can finish most jobs in a single day, and we leave your place cleaner than we found it."
+      />
+    </div>
+  </section>
+  <section class="flex flex-col items-center">
+    <div class="container mx-auto my-12">
+      <h2 class="text-4xl">Great Service, Even Better Value</h2>
+      <p>We can fix</p>
+    </div>
+  </section>
 </BaseLayout>

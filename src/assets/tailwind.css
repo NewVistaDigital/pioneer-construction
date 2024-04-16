@@ -23,6 +23,7 @@
   h5,
   h6 {
     font-family: var(--font-space);
+    font-weight: bold;
   }
 }
 

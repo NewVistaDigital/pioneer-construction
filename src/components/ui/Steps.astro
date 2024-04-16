@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  step: number;
+}
+
+const { title, text, step } = Astro.props as Props;
+---
+
+<div class="flex flex-1 flex-col p-4">
+  <div
+    class="z-10 flex size-24 items-center justify-center self-center rounded-full bg-primary align-middle align-middle text-4xl text-white">
+    {step}
+  </div>
+  <div
+    class="-mt-12 w-full flex-1 rounded-xl bg-zinc-100 p-8 pt-16 text-center dark:bg-zinc-800">
+    <h3 class="mb-4 text-3xl">{title}</h3>
+    <p>{text}</p>
+  </div>
+</div>
