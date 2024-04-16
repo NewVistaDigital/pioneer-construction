@@ -1,12 +1,70 @@
 ---
+// Layouts
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+// Components
+import Image from "astro/components/Image.astro";
+
+// Content
+import Noah from "@assets/images/noah_krdo.jpg";
+import Roof from "@assets/images/top-down.jpg";
+import { SITE_TITLE } from "@src/consts";
+import Button from "@components/ui/Button.astro";
 ---
 
 <BaseLayout
   title="About Pioneer Construction"
   description="Learn about our Colorado Springs roofing company.">
-  <div class="container prose-xl mx-auto my-12 text-center">
-    <h1>About us</h1>
-    <p>We're a great company.</p>
-  </div>
+  <section class="container prose-xl mx-auto my-24 p-4">
+    <Image
+      src={Noah}
+      alt="Noah Clingan at KRDO"
+      width="200"
+      class="shadow-br m-12 rounded-xl max-sm:hidden sm:float-right"
+    />
+    <h1>Your Affordable Roofing Experts in Colorado Springs.</h1>
+    <p>
+      I have over 20 years of experience in the construction industry. I was a
+      building/roofing inspector for PPRBD.
+    </p>
+    <p>
+      As a roofing inspector, I noticed that many contractors were coming short
+      on communication and quality. I didn't like seeing homeowners left
+      confused and feeling like they were just a number for some sales team.
+    </p>
+    <p>
+      Seeing a gap of quality, honesty, and clear communication in the industry,
+      I decided to start Pioneer Roofing Company to become the best affordable
+      roofer in Colorado Springs. Our <a
+        href="https://www.google.com/maps/place/Pioneer+Construction,+LLC/@38.8377103,-104.7742683,15z/data=!4m14!1m5!3m4!1s0x0:0xd0c0a00e6362d42b!2sPioneer+Construction,+LLC!11m1!2e1!3m7!1s0x871345b0a2407b93:0xd0c0a00e6362d42b!8m2!3d38.8377103!4d-104.7742683!9m1!1b1!16s%2Fg%2F11f73j8196?entry=ttu"
+        target="_blank"
+        class="text-secondary underline hover:text-primary">reviews on Google</a
+      > show we're doing a great job. We'd love to do the same for you.
+    </p>
+    <p>
+      <span class="text-2xl text-zinc-500">— Noah Clingan</span><br />
+      <span class="text-xl text-zinc-400">Founder, {SITE_TITLE}</span>
+    </p>
+  </section>
+
+  <section
+    class="prose-lg mx-4 my-8 rounded-xl bg-primary p-12 text-center text-white md:m-12 md:p-24 md:pb-48">
+    <h2 class="text-5xl">Free Upgrades on Every Home</h2>
+    <p class="text-2xl leading-8">
+      We upgrade every customer to a class-4 high impact resistance shingle.
+      This means your roof can withstand just about every storm Colorado throws
+      at your home.
+    </p>
+    <Button
+      href="/contact"
+      text="Ask about your FREE upgrade"
+      style="primary"
+    />
+  </section>
+  <Image
+    src={Roof}
+    alt="Colorado Springs High Impact Shingle"
+    width={800}
+    class="mx-auto mb-12 rounded-xl max-md:-mt-12 md:-mt-48"
+  />
 </BaseLayout>
