@@ -5,7 +5,9 @@ import Button from "@components/ui/Button.astro";
 import { Icon } from "astro-icon/components";
 
 // Content
-import Repairs from "@assets/images/new-builds.jpg";
+import Replacement from "@assets/images/new-builds.jpg";
+import Repairs from "@assets/images/top-down.jpg";
+import Windows from "@assets/images/windows.jpg";
 ---
 
 <section>
@@ -14,12 +16,28 @@ import Repairs from "@assets/images/new-builds.jpg";
     <h2 class="mt-0 text-4xl font-bold">We can fix any roofing problem</h2>
     <div role="list" class="my-12 flex flex-wrap justify-center gap-10">
       <ServiceCard
+        src={Replacement}
+        alt="Roof replacement in colorado"
+        title="Roof Replacements"
+        topper="Install"
+        width={420}
+        text="We can finish most residential roof replacements in a day."
+      />
+      <ServiceCard
         src={Repairs}
         alt="Roof repairs"
         title="Roof Repairs"
-        topper="Install"
-        width={300}
-        text="You may not need a new roof. Sometimes a repair can "
+        topper="Repair"
+        width={420}
+        text="You may not need a new roof. Sometimes a repair can solve your problem."
+      />
+      <ServiceCard
+        src={Windows}
+        alt="Roof repairs"
+        title="Windows & Gutters"
+        topper="Exterior"
+        width={420}
+        text="We can take care of your homes exterior, from siding to windows and gutters."
       />
     </div>
     <!-- <div class="text-6xl *:inline"> -->

@@ -6,51 +6,50 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ServiceCard from "@components/ui/ServiceCard.astro";
 
 // Content
-import Repairs from "@assets/images/killer-view.jpg";
+import Replacement from "@assets/images/new-builds.jpg";
+import Repairs from "@assets/images/top-down.jpg";
+import Windows from "@assets/images/windows.jpg";
 ---
 
 <BaseLayout
   title="Roofing Services"
   description="We provide all roofing services in the Colorado Springs and front range area">
-  <div class="container prose-xl mx-auto my-12 text-center">
+  <div class="container prose-xl mx-auto my-12 max-w-5xl text-center">
     <h1>Our Services</h1>
     <p>
-      We provde all roofing services in the Colorado Springs and Front Range
-      areas.
+      We can handle all roofing and home exterior repairs in the Colorado
+      Springs and Front Range areas.
+    </p>
+    <p>
+      If your roof, siding, windows, or gutters were damaged by wind, hail, or
+      any of our Colorado Springs storms, we can get your home looking better
+      than new.
     </p>
   </div>
   <div role="list" class="my-12 flex flex-wrap justify-center gap-10">
     <ServiceCard
-      src={Repairs}
-      alt="Roof repairs"
-      title="Roof Repairs"
+      src={Replacement}
+      alt="Roof replacement in colorado"
+      title="Roof Replacements"
       topper="Install"
-      width={300}
-      text="You may not need a new roof. Sometimes a repair can "
+      width={420}
+      text="We can finish most residential roof replacements in a day."
     />
     <ServiceCard
       src={Repairs}
       alt="Roof repairs"
       title="Roof Repairs"
-      topper="Install"
-      width={300}
-      text="You may not need a new roof. Sometimes a repair can "
+      topper="Repair"
+      width={420}
+      text="You may not need a new roof. Sometimes a repair can solve your problem."
     />
     <ServiceCard
-      src={Repairs}
+      src={Windows}
       alt="Roof repairs"
-      title="Roof Repairs"
-      topper="Install"
-      width={300}
-      text="You may not need a new roof. Sometimes a repair can "
-    />
-    <ServiceCard
-      src={Repairs}
-      alt="Roof repairs"
-      title="Roof Repairs"
-      topper="Install"
-      width={300}
-      text="You may not need a new roof. Sometimes a repair can "
+      title="Windows & Gutters"
+      topper="Exterior"
+      width={420}
+      text="We can take care of your homes exterior, from siding to windows and gutters."
     />
   </div>
 </BaseLayout>

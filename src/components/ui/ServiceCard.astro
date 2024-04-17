@@ -18,10 +18,10 @@ const { src, alt, width, topper, title, text } = Astro.props;
 <a
   role="listitem"
   href="/services"
-  class="*:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
+  class="flex flex-col items-center *:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
   <Image src={src} alt={alt} width={width} class="mb-0 rounded-xl" />
   <div
-    class="relative z-10 mx-6 -mt-12 block rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
+    class="relative z-10 mx-6 -mt-12 block flex-grow rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
     {topper && <span class="font-space mt-0 text-primary">{topper}</span>}
     <h3 class="mt-0 text-2xl font-bold">{title}</h3>
     <p>{text}</p>
