@@ -3,23 +3,23 @@
 import Image from "astro/components/Image.astro";
 
 // Consts
-interface Props {
-  alt: string;
-  image: string | array | undefined;
-  text: string;
-  title: string;
-  topper?: string;
-  width?: number;
-}
+// interface Props {
+//   alt: string;
+//   src: string;
+//   text: string;
+//   title: string;
+//   topper?: string;
+//   width?: number;
+// }
 
-const { alt, image, width, topper, title, text } = Astro.props as Props;
+const { src, alt, width, topper, title, text } = Astro.props;
 ---
 
 <a
   role="listitem"
   href="/services"
   class="*:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
-  <Image src={image} alt={alt} width={width} class="mb-0 rounded-xl" />
+  <Image src={src} alt={alt} width={width} class="mb-0 rounded-xl" />
   <div
     class="relative z-10 mx-6 -mt-12 block rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
     {topper && <span class="font-space mt-0 text-primary">{topper}</span>}
