@@ -1,6 +1,12 @@
 ---
 // Layout
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+// Components
+import ServiceCard from "@components/ui/ServiceCard.astro";
+
+// Content
+import Repairs from "@assets/images/new-builds.jpg";
 ---
 
 <BaseLayout
@@ -12,5 +18,35 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       We provde all roofing services in the Colorado Springs and Front Range
       areas.
     </p>
+  </div>
+  <div role="list" class="my-12 flex flex-wrap justify-center gap-10">
+    <ServiceCard
+      image={Repairs}
+      alt="Roof repairs"
+      title="Roof Repairs"
+      topper="Install"
+      text="You may not need a new roof. Sometimes a repair can "
+    />
+    <ServiceCard
+      image={Repairs}
+      alt="Roof Replacements"
+      title="Roof Replacements"
+      topper="Install"
+      text="You may not need a new roof. Sometimes a repair can "
+    />
+    <ServiceCard
+      image={Repairs}
+      alt="Roof Replacements"
+      title="Free Inspections"
+      topper="Install"
+      text="You may not need a new roof. Sometimes a repair can "
+    />
+    <ServiceCard
+      image={Repairs}
+      alt="Roof Replacements"
+      title="Windows"
+      topper="Install"
+      text="You may not need a new roof. Sometimes a repair can "
+    />
   </div>
 </BaseLayout>

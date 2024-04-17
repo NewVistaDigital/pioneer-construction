@@ -1,0 +1,20 @@
+---
+// Layout
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Content
+import ImageGallery from "../components/content/ImageGallery.astro";
+---
+
+<BaseLayout
+  title="Our Roofing Projects"
+  description="We've done tons of houses in Colorado Springs">
+  <section class="container prose-lg mx-auto mt-12 text-center lg:px-16">
+    <h1>We've done plenty of Colorado Springs Roofs</h1>
+    <p>
+      From unique materials, steep pitches, and other unique challenges - we've
+      done it all.
+    </p>
+    <ImageGallery />
+  </section>
+</BaseLayout>

@@ -1,10 +1,11 @@
 ---
 // Components
-import Image from "astro/components/Image.astro";
+import ServiceCard from "@components/ui/ServiceCard.astro";
+import Button from "@components/ui/Button.astro";
+import { Icon } from "astro-icon/components";
 
 // Content
-import NewBuild from "@assets/images/new-builds.jpg";
-import Button from "@components/ui/Button.astro";
+import Repairs from "@assets/images/new-builds.jpg";
 ---
 
 <section>
@@ -12,66 +13,31 @@ import Button from "@components/ui/Button.astro";
     <p class="font-space text-primary">Our Services</p>
     <h2 class="mt-0 text-4xl font-bold">We can fix any roofing problem</h2>
     <div role="list" class="my-12 flex flex-wrap justify-center gap-10">
-      <!-- Card 1 -->
-      <a
-        role="listitem"
-        href="/services"
-        class="*:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
-        <Image
-          src={NewBuild}
-          alt="New build"
-          width="00"
-          class="mb-0 rounded-xl"
-        />
-        <div
-          class="relative z-10 mx-6 -mt-12 block rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
-          <span class="font-space mt-0 text-primary">Install</span>
-          <h3 class="mt-0 text-2xl font-bold">New Builds</h3>
-          <p>Service text goes here to describe the service</p>
-        </div>
-      </a>
-      <!-- End card 1 -->
-
-      <!-- Card 2 -->
-      <a
-        role="listitem"
-        href="/services"
-        class="*:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
-        <Image
-          src={NewBuild}
-          alt="New build"
-          width="00"
-          class="mb-0 rounded-xl"
-        />
-        <div
-          class="relative z-10 mx-6 -mt-12 block rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
-          <span class="font-space mt-0 text-primary">Install</span>
-          <h3 class="mt-0 text-2xl font-bold">New Builds</h3>
-          <p>Service text goes here to describe the service</p>
-        </div>
-      </a>
-      <!-- End card 2 -->
-
-      <!-- Card 2 -->
-      <a
-        role="listitem"
-        href="/services"
-        class="*:transition-colors *:hover:bg-secondary *:hover:dark:bg-yellow-900 md:w-[45%] lg:w-[30%]">
-        <Image
-          src={NewBuild}
-          alt="New build"
-          width="00"
-          class="mb-0 rounded-xl"
-        />
-        <div
-          class="relative z-10 mx-6 -mt-12 block rounded-xl bg-zinc-200 p-10 dark:bg-zinc-800">
-          <span class="font-space mt-0 text-primary"> nice</span>
-          <h3 class="mt-0 text-2xl font-bold">New Builds</h3>
-          <p>Service text goes here to describe the service</p>
-        </div>
-      </a>
-      <!-- End card 3 -->
+      <ServiceCard
+        image={Repairs}
+        alt="Roof repairs"
+        title="Roof Repairs"
+        topper="Install"
+        text="You may not need a new roof. Sometimes a repair can "
+      />
     </div>
+    <!-- <div class="text-6xl *:inline"> -->
+    <!--   <Icon name="ic:round-roofing" />Repairs -->
+    <!--   <Icon name="ic:round-other-houses" />ReRoof -->
+    <!--   <Icon name="ic:outline-sensor-window" />Windows -->
+    <!--   <Icon name="ic:round-format-paint" /> -->
+    <!--   <Icon name="ic:round-house-siding" />Siding -->
+    <!--   <Icon name="ic:baseline-bubble-chart" />hail -->
+    <!--   <Icon name="ic:baseline-holiday-village" /> -->
+    <!--   <Icon name="ic:round-loop" /> -->
+    <!--   <Icon name="ic:round-handyman" /> -->
+    <!--   <Icon name="ic:round-cottage" /> -->
+    <!--   <Icon name="ic:round-hardware" /> -->
+    <!--   <Icon name="ic:round-filter-alt" /> -->
+    <!--   <Icon name="ic:round-crop-3-2" /> -->
+    <!--   <Icon name="ic:round-build-circle" /> -->
+    <!--   <Icon name="ic:round-carpenter" /> -->
+    <!-- </div> -->
     <Button href="/services" text="View all services" style="secondary" />
   </div>
 </section>

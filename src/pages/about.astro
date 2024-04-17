@@ -4,11 +4,12 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // Components
 import Image from "astro/components/Image.astro";
+import CTA from "@components/content/CallToAction.astro";
 
 // Content
 import Noah from "@assets/images/noah_krdo.jpg";
 import Roof from "@assets/images/top-down.jpg";
-import { SITE_TITLE } from "@src/consts";
+import { SITE_PHONE, SITE_PHONE_HREF, SITE_TITLE } from "@src/consts";
 import Button from "@components/ui/Button.astro";
 ---
 
@@ -67,4 +68,25 @@ import Button from "@components/ui/Button.astro";
     width={800}
     class="mx-auto mb-12 rounded-xl max-md:-mt-12 md:-mt-48"
   />
+  <CTA
+    title="The best roofing company you'll ever work with."
+    style="secondary"
+    classes="-mb-16 max-md:mx-4"
+    ><p>
+      <span class="bg-secondary"></span>
+      Thinking about a new roof can be stresful. It doesn't have to be. We'll handle
+      insurance negotiations and keep you in the loop throughout the entire process.
+    </p>
+    <Button text="Book your inspection" href="/contact" />
+    <div>
+      <p class="mb-0">or give us a call at</p>
+      <p class="mb-0 mt-2">
+        <a
+          href={SITE_PHONE_HREF}
+          class="text-3xl transition-colors hover:text-yellow-200"
+          >{SITE_PHONE}</a
+        >
+      </p>
+    </div>
+  </CTA>
 </BaseLayout>

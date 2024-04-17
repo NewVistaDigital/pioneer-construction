@@ -17,7 +17,8 @@ export default defineConfig({
         solar: [
           "letter-bold",
           "phone-calling-bold"
-        ]
+        ],
+        ic: ["*"]
       }
     }),
     tailwind(),

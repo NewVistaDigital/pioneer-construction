@@ -14,14 +14,9 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
   href={href}
   class:list={[
     className,
-    "transition-colors hover:text-primary",
+    "transition-colors hover:text-primary max-lg:text-lg",
     { "active cursor-default text-primary dark:text-teal-100": isActive },
   ]}
   {...props}>
   <slot />
 </a>
-<style>
-  a.active {
-    /* color: #0b5d6a; */
-  }
-</style>
