@@ -9,7 +9,7 @@ import { slugify } from './utils/slugify';
 export const SITE_TITLE = 'Pioneer Construction';
 export const SITE_DESCRIPTION = 'This is the default description of this website. Nice!';
 export const SITE_URL = 'https://example.com/';
-export const SITE_EMAIL = 'webmaster@newvistadigital.com';
+export const SITE_EMAIL = 'nclingan.pioneer@gmail.com';
 export const SITE_PHONE = '(719) 822-9222'
 export const SITE_PHONE_HREF = 'tel:7198229222'
 export const SITE_DEFAULT_IMAGE = '/preview.jpg'
