@@ -19,4 +19,4 @@ export const UI_THEME = 'system'; // Values: "system" | "light" | "dark" | "ligh
 
 export const DISABLE_INDEXING = false;
 
-export const ANALYTICS_GA4 = 'G-T100000000';
+export const ANALYTICS_GA4 = 'G-P9F8WMP4ZH';
