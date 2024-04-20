@@ -1,16 +1,15 @@
 ---
-// Components
-
 // Content
 import { SITE_UTM_SOURCE } from "@src/consts";
 ---
 
 <form
   action="/success"
-  class="w-full space-y-8 rounded-2xl bg-zinc-100 p-12 dark:bg-zinc-800 lg:w-1/2"
+  class="w-full space-y-8 rounded-2xl bg-zinc-100 p-6 dark:bg-zinc-800 lg:w-1/2 lg:p-12"
   name=`${SITE_UTM_SOURCE}-contact`
   method="POST"
   data-netlify="true">
+  <h2>Get in touch</h2>
   <div>
     <label
       for="email"
