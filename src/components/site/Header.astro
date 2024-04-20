@@ -32,7 +32,15 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
         />
       </a>
       <div class="block lg:hidden">
-        <div class="flex justify-between">
+        <div class="flex items-center justify-between">
+          <div class="flex flex-col items-center px-4">
+            <span class="font-space sm:hidden">Tap to call</span>
+            <a
+              href={SITE_PHONE_HREF}
+              class="block w-max flex-grow text-xl font-bold text-primary dark:text-teal-400"
+              >{SITE_PHONE}</a
+            >
+          </div>
           <MenuIcon class="h-4 w-4 text-zinc-800">
             <svg
               class="ham hamRotate ham8"
@@ -57,7 +65,7 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
     </div>
     <MenuItems class="hidden w-full justify-end lg:flex">
       <ul
-        class="flex w-max flex-col items-center justify-end justify-end max-lg:w-full max-lg:items-end max-lg:border-b max-lg:border-b-zinc-300 lg:flex-row lg:gap-5">
+        class="flex w-max flex-col items-center justify-end max-lg:w-full max-lg:items-end max-lg:border-b max-lg:border-b-zinc-300 lg:flex-row lg:gap-5">
         <li><NavLink href="/" data-navLink>Home</NavLink></li>
         <li><NavLink href="/about" data-navLink>About</NavLink></li>
         <li><NavLink href="/services" data-navLink>Services</NavLink></li>
@@ -65,73 +73,73 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
         <li>
           <NavLink href="/contact" data-navLink>Contact Us</NavLink>
         </li>
-        <li>
-          <a
-            href={SITE_PHONE_HREF}
-            class="inline-block w-max text-xl font-bold text-primary dark:text-teal-400"
-            >{SITE_PHONE}</a
-          >
-        </li>
       </ul>
     </MenuItems>
+    <div class="flex items-center max-lg:hidden">
+      <a
+        href={SITE_PHONE_HREF}
+        class="block w-max flex-grow text-xl font-bold text-primary dark:text-teal-400"
+        >{SITE_PHONE}</a
+      >
+    </div>
   </Astronav>
-</header>
 
-<script>
-  // Accessibility tool: add aria-current to current page nav links.
-  const navLinks = document.querySelectorAll("[data-navLink]");
+  <script>
+    // Accessibility tool: add aria-current to current page nav links.
+    const navLinks = document.querySelectorAll("[data-navLink]");
 
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === window.location.pathname) {
-      link.setAttribute("aria-current", "page");
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === window.location.pathname) {
+        link.setAttribute("aria-current", "page");
+      }
+    });
+  </script>
+
+  <style>
+    .ham {
+      cursor: pointer;
+      transition: transform 400ms;
+      user-select: none;
     }
-  });
-</script>
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition:
+        stroke-dasharray 400ms,
+        stroke-dashoffset 400ms;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
 
-<style>
-  .ham {
-    cursor: pointer;
-    transition: transform 400ms;
-    user-select: none;
-  }
-  .hamRotate.active {
-    transform: rotate(45deg);
-  }
-  .hamRotate180.active {
-    transform: rotate(180deg);
-  }
-  .line {
-    fill: none;
-    transition:
-      stroke-dasharray 400ms,
-      stroke-dashoffset 400ms;
-    stroke-width: 5.5;
-    stroke-linecap: round;
-  }
-
-  .ham8 .top {
-    stroke-dasharray: 40 160;
-  }
-  .ham8 .middle {
-    stroke-dasharray: 40 142;
-    transform-origin: 50%;
-    transition: transform 400ms;
-  }
-  .ham8 .bottom {
-    stroke-dasharray: 40 85;
-    transform-origin: 50%;
-    transition:
-      transform 400ms,
-      stroke-dashoffset 400ms;
-  }
-  .ham8.active .top {
-    stroke-dashoffset: -64px;
-  }
-  .ham8.active .middle {
-    /* stroke-dashoffset: -20px; */
-    transform: rotate(90deg);
-  }
-  .ham8.active .bottom {
-    stroke-dashoffset: -64px;
-  }
-</style>
+    .ham8 .top {
+      stroke-dasharray: 40 160;
+    }
+    .ham8 .middle {
+      stroke-dasharray: 40 142;
+      transform-origin: 50%;
+      transition: transform 400ms;
+    }
+    .ham8 .bottom {
+      stroke-dasharray: 40 85;
+      transform-origin: 50%;
+      transition:
+        transform 400ms,
+        stroke-dashoffset 400ms;
+    }
+    .ham8.active .top {
+      stroke-dashoffset: -64px;
+    }
+    .ham8.active .middle {
+      /* stroke-dashoffset: -20px; */
+      transform: rotate(90deg);
+    }
+    .ham8.active .bottom {
+      stroke-dashoffset: -64px;
+    }
+  </style>
+</header>
