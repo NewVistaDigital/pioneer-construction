@@ -11,7 +11,7 @@ export default {
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      serif: ["Space Grotesk", "serif"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

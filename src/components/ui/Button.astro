@@ -13,6 +13,7 @@ interface Props {
   isFilled?: boolean;
   borderVisible?: boolean;
   classes?: string;
+  target?: string;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   isFilled = true,
   borderVisible = false,
   classes,
+  target,
   ...rest
 } = Astro.props as Props;
 ---
