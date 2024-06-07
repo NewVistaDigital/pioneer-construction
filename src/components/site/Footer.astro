@@ -3,6 +3,7 @@
 import Button from "@components/ui/Button.astro";
 import Image from "astro/components/Image.astro";
 import DarkModeToggle from "@components/ui/DarkModeToggle.astro";
+import Social from "@components/ui/Social.astro";
 
 // Content
 import logoDark from "@assets/logo-white.png";
@@ -19,7 +20,17 @@ const today = new Date();
   <div class="container mx-auto px-6">
     <div
       class="flex items-center gap-12 align-middle max-lg:flex-col max-lg:gap-0 lg:items-end">
-      <Image src={logoDark} alt={SITE_TITLE} width="250" />
+      <div>
+        <Image src={logoDark} alt={SITE_TITLE} width="250" />
+        <div class="flex">
+          <Social platform="facebook" username="pioneerconstructionllc" />
+          <Social platform="youtube" username="@noahclingan5410" />
+          <Social
+            platform="yelp"
+            username="biz/pioneer-construction-colorado-springs"
+          />
+        </div>
+      </div>
       <div class="lg:w-1/2 xl:w-2/3">
         <p>
           At Pioneer Construction we provide exceptional roofing solutions with

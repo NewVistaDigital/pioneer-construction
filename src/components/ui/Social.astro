@@ -1,0 +1,19 @@
+---
+const { platform, username } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<a
+  class="transition-colors hover:text-secondary"
+  href={`https://www.${platform}.com/${username}`}
+  ><Icon name={`bxl:${platform}`} /></a
+>
+
+<style>
+  a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    padding-right: 0.5rem;
+  }
+</style>

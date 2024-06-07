@@ -19,7 +19,8 @@ export default defineConfig({
           "letter-bold",
           "phone-calling-bold"
         ],
-        ic: ["*"]
+        ic: ["*"],
+        bxl: ["facebook", "youtube", "yelp"]
       }
     }),
     partytown({
