@@ -3,6 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url('/fonts/SpaceGrotesk-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+  }
+
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url('/fonts/SpaceGrotesk-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+    display: swap;
+  }
+
   :root {
     --font-space: "Space Grotesk", system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     --c-primary: #0b5d6a;
